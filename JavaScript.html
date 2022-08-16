@@ -121,8 +121,14 @@ document.getElementById("COPIAR").addEventListener('click', () => {
 
 document.getElementById("ENVIAR").addEventListener('click', () => {
 
-  abrirNuevoTab('https://api.whatsapp.com/send?&text='+`ID: ${CampoID} Dirección: ${CampoDireccion} Telefonista: ${CampoCodTelef} - ${CampoTelef} Franja horaria de agendamiento: ${CampoHora1} a ${CampoHora2} - ${CampoFecha} Observación: ${CampoObs}\n`)
+  abrirNuevoTab('https://api.whatsapp.com/send?&text='+`@${CampoTelef} => ID: ${CampoID} Dirección: ${CampoDireccion} Telefonista: ${CampoCodTelef} - ${CampoTelef} Franja horaria de agendamiento: ${CampoHora1} a ${CampoHora2} - ${CampoFecha} Observación: ${CampoObs}\n`)
 
+      })
+
+
+
+document.getElementById("BORRAR").addEventListener('click',()=> {
+        limpiar();
       })
 
 
@@ -135,10 +141,18 @@ function abrirNuevoTab(url) {
   win.focus();
 }
 
-const PRUEBA = () => {
-    document.getElementById("DIRECCION").value = "EDUARDO";
-    document.getElementById("ID").value = "EDUARDO";
-}
+function limpiar(){
+        document.getElementById("ID").value = "";
+        document.getElementById("DIRECCION").value = "";
+        document.getElementById("HORA1").value = "";
+        document.getElementById("HORA2").value = "";
+        document.getElementById("FECHA").value = "";
+        document.getElementById("OBS").value = "";
+        document.getElementById("TELEF").value = "";
+        document.getElementById("TELEFONISTA").value = "";
+        document.getElementById("DESPACHO").value = "";
+
+        }
 
 
 
