@@ -1,0 +1,147 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+        }, false)
+    })
+})()
+
+//Variables
+
+
+//Eventos
+
+document.getElementById("FORMULARIO").addEventListener('submit', () => {
+
+    if ((document.getElementById("ID").value == "") || (document.getElementById("DIRECCION").value == "") || (document.getElementById("HORA1").value == "") || (document.getElementById("HORA2").value == "") || (document.getElementById("FECHA").value == "") || (document.getElementById("OBS").value == "") || (document.getElementById("TELEF").value == "") || (document.getElementById("DESPACHO").value == "")){
+          alert("Debe completar todos los campos")
+          return
+        }
+
+
+
+        document.getElementById("GENERAR").disabled = true;
+
+
+        CampoDespacho = document.getElementById("DESPACHO").value;
+        CampoID = document.getElementById("ID").value;
+        CampoDireccion = document.getElementById("DIRECCION").value.toUpperCase();
+        CampoHora1 = document.getElementById("HORA1").value.toUpperCase();
+        CampoHora2 = document.getElementById("HORA2").value;
+        CampoFecha = document.getElementById("FECHA").value;
+        CampoObs = document.getElementById("OBS").value;
+        CampoCodTelef = document.getElementById("TELEF").value.toUpperCase();
+        CampoTelef = document.getElementById("TELEFONISTA").value.toUpperCase();
+        HORA = new Date().toLocaleString();
+        
+
+        FORMATO = `ID: ${CampoID}\nDirección: ${CampoDireccion}\nTelefonista: ${CampoCodTelef} - ${CampoTelef}\nFranja horaria de agendamiento: ${CampoHora1} a ${CampoHora2} - ${CampoFecha}\nObservación: ${CampoObs}\n`;
+
+        CampoFhoraria = `${CampoHora1} a ${CampoHora2}`;
+        CampoTelefonista = `${CampoCodTelef} - ${CampoTelef}`;
+
+        document.getElementById("PARRAFO").value = FORMATO;
+
+        console.log("ENTRO");
+
+        google.script.run.Escribir(CampoID,CampoDireccion,CampoFhoraria,CampoTelefonista,CampoObs,CampoDespacho,HORA);
+
+        setTimeout(function(){ 
+          window.alert("Gestión cargada correctamente");
+          document.getElementById("GENERAR").disabled = false;
+          }, 2000);
+
+
+})
+
+document.getElementById("TELEF").addEventListener('change', () => {
+
+    if (document.getElementById("TELEF").value == "1010"){
+          document.getElementById("TELEFONISTA").value = "NESTOR";
+          return
+        }
+
+    if (document.getElementById("TELEF").value == "1020"){
+          document.getElementById("TELEFONISTA").value = "GONZALO";
+          return
+        }
+
+    if (document.getElementById("TELEF").value == "1030"){
+          document.getElementById("TELEFONISTA").value = "ALEJO";
+          return
+        }
+
+    if (document.getElementById("TELEF").value == "1040"){
+          document.getElementById("TELEFONISTA").value = "EDUARDO";
+          return
+        }
+
+    if (document.getElementById("TELEF").value == "1050"){
+          document.getElementById("TELEFONISTA").value = "ALEJANDRA";
+          return
+        }
+
+    if (document.getElementById("TELEF").value == "1060"){
+          document.getElementById("TELEFONISTA").value = "EMMANUEL";
+          return
+        }
+
+    if (document.getElementById("TELEF").value == "1070"){
+          document.getElementById("TELEFONISTA").value = "LUCAS";
+          return
+        }
+
+})
+
+
+document.getElementById("COPIAR").addEventListener('click', () => {
+
+        var codigoACopiar = document.getElementById('PARRAFO');
+        codigoACopiar.select();
+        codigoACopiar.setSelectionRange(0,99999);
+
+        document.execCommand('copy');
+
+      })
+
+
+document.getElementById("ENVIAR").addEventListener('click', () => {
+
+  abrirNuevoTab('https://api.whatsapp.com/send?&text='+`ID: ${CampoID} Dirección: ${CampoDireccion} Telefonista: ${CampoCodTelef} - ${CampoTelef} Franja horaria de agendamiento: ${CampoHora1} a ${CampoHora2} - ${CampoFecha} Observación: ${CampoObs}\n`)
+
+      })
+
+
+//Funciones
+
+function abrirNuevoTab(url) {
+  // Abrir nuevo tab
+  var win = window.open(url, '_blank');
+  // Cambiar el foco al nuevo tab (punto opcional)
+  win.focus();
+}
+
+const PRUEBA = () => {
+    document.getElementById("DIRECCION").value = "EDUARDO";
+    document.getElementById("ID").value = "EDUARDO";
+}
+
+
+
+
+
+</script>
