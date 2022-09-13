@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reformas de Red</title>
+    <title></title>
 </head>
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -22,12 +22,16 @@
                 <div class="row align-items-start">
                     <div class="col-4 align-self-center">
 
-                        <img src='https://i.postimg.cc/rFYhmWT9/logo-GPSfull.png' border='0' alt='logo-GPSfull' class="img-fluid " style="max-height: 100px"/>
+                        <img src='https://i.postimg.cc/rFYhmWT9/logo-GPSfull.png' border='0' alt='logo-GPSfull'
+                            class="img-fluid " style="max-height: 100px" />
 
                     </div>
 
-                    <div class="col-6 align-self-center">
-                        <h3 style="color:black">Control de Gestiones Telefonistas</h3>
+                    <div class="col-4 align-self-center">
+                        <h3 style="color:black">Generador de Informes</h3>
+                    </div>
+
+                    <div class="col-1 align-self-center">
                     </div>
 
                     <div class="col-2 align-self-center d-none d-md-block">
@@ -40,39 +44,35 @@
 
         <div class="row">
             <!-- --------------------------------------BODY------------------------------------------------------------>
-            <div class="col-md-6 pt-3 pb-5" style="background-color: #C2CAE5;">
+            <div class="col-md-12 pt-3 pb-5" style="background-color: #C2CAE5;">
 
-                <form id="FORMULARIO" class="row g-2 needs-validation" onsubmit="return false" action="PRUEBA()" novalidate>
+                <form id="FORMULARIO" class="row g-2 needs-validation" onsubmit="return false" action="PRUEBA()"
+                    novalidate>
 
                     <div class="col-12 position-relative">
                         <div class="row">
-                            <label for="DESPACHO" class="col-sm-3 col-form-label text-start">Despacho:</label>
-                            <div class="col-sm-5">
-                                <select class="form-select" id="DESPACHO" required>
-                                          <option selected disabled value="">Seleccione</option>
-                                          <option value="ALEJANDRO">ALEJANDRO</option>
-                                          <option value="RENATO">RENATO</option>
-                                          <option value="RAFAEL">RAFAEL</option>
-                                          <option value="FERNANDO">FERNANDO</option>
-                                          <option value="GONZALO">GONZALO</option>     
-                                          <option value="OMAR">OMAR</option>
-                                          <option value="MAURO">MAURO</option>
-                                      </select>
-                                <div class="invalid-tooltip">
-                                    ¡Debes ingresar el Despacho!
+                            <div class="input-group">
+                                <label for="ID" class="col-sm-3 col-form-label text-start">ID:</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="ID" placeholder="Ingrese el ID"
+                                        required>
+                                    <div class="invalid-tooltip">
+                                        ¡Debes ingresar el Despacho!
+                                    </div>
                                 </div>
+                                <button class="btn btn-secondary" type="button" id="BUSCARID">BUSCAR ID</button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-12 position-relative">
                         <div class="row">
-                            <label for="ID" class="col-sm-3 col-form-label text-start">ID:</label>
+                            <label for="NODO" class="col-sm-3 col-form-label text-start">Nodo:</label>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" id="ID" placeholder="Ingrese el ID"
+                                <input type="text" class="form-control" id="NODO" placeholder="Ingrese el Nodo"
                                     required>
                                 <div class="invalid-tooltip">
-                                    ¡Debes ingresar el ID!
+                                    ¡Debes ingresar el Nodo!
                                 </div>
                             </div>
                         </div>
@@ -81,9 +81,9 @@
                     <div class="col-12 position-relative">
                         <div class="row">
                             <label for="DIRECCION" class="col-sm-3 col-form-label text-start">Dirección:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="DIRECCION" placeholder="Ingrese la Dirección"
-                                    required>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="DIRECCION"
+                                    placeholder="Ingrese la Dirección" required>
                                 <div class="invalid-tooltip">
                                     ¡Debes ingresar la Dirección!
                                 </div>
@@ -92,74 +92,243 @@
                     </div>
 
                     <div class="col-12 position-relative">
-                      <div class="row">
-                              <div class="input-group">
-                                  <div class="col-3 text-start">
-                                    <label for="TELEF" class="col-form-label text-start">Código de Telefonista</label>
-                                  </div>
-                                  <div class="col-3">
-                                      <select class="form-select" id="TELEF" required>
-                                          <option selected disabled value="">Seleccione</option>
-                                          <option value="1010">1010</option>
-                                          <option value="1020">1020</option>
-                                          <option value="1030">1030</option>
-                                          <option value="1040">1040</option>
-                                          <option value="1050">1050</option>
-                                          <option value="1060">1060</option>
-                                          <option value="1070">1070</option>
-                                      </select>
-                                      <div class="invalid-tooltip">
-                                          ¡Debes Seleccionar el codigo del Telefonistas!
-                                      </div>
-                                  </div>
-                                  <div class="col-6">
-                                      <input type="text" class="form-control" id="TELEFONISTA" placeholder="Telefonista" disabled>
-                                  </div>
-                              </div>
-                      </div>
-                    </div> 
-
-                    <div class="col-12 position-relative">
-                      <div class="row">
-                              <div class="input-group">
-                                  <div class="col-4 text-start">
-                                    <label for="HORARIO" class="col-form-label text-start">Franja Horaria de Agendamiento</label>
-                                  </div>
-                                  <div class="col-2">
-                                      <input id="HORA1" type="text" class="form-control" required>
-                                      <div class="invalid-tooltip">
-                                          ¡Debes Seleccionar la franja horaria!
-                                      </div>
-                                  </div>
-                                  <div class="col-1 text-center">
-                                    <label for="a" class="col-form-label text-start"> a </label>
-                                  </div>
-                                  <div class="col-2">
-                                      <input id="HORA2" type="text" class="form-control" required>
-                                      <div class="invalid-tooltip">
-                                          ¡Debes Seleccionar la franja horaria!
-                                      </div>
-                                  </div>
-                                  <div class="col-3">
-                                      <input id="FECHA" type="date" class="form-control" required>
-                                      <div class="invalid-tooltip">
-                                          ¡Debes Seleccionar la Fecha!
-                                      </div>
-                                  </div>
-                              </div>
-                      </div>
-                    </div> 
-
-                    <div class="col-12 position-relative">
                         <div class="row">
-                            <label for="OBS" class="col-sm-3 col-form-label text-start">Observaciones:</label>
-                            <div class="col-sm-12">
-                                <textarea id="OBS" class="form-control" id="exampleFormControlTextarea1" rows="2" required></textarea>
+                            <label for="ZONA" class="col-sm-3 col-form-label text-start">ZONA:</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="ZONA" placeholder="Ingrese la zona del Edif"
+                                    required>
+                                <div class="invalid-tooltip">
+                                    ¡Debes ingresar la Zona!
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-12 pt-2">
+                    <div class="col-12 position-relative">
+                        <div class="row">
+                            <label for="PISOS" class="col-sm-3 col-form-label text-start">Pisos:</label>
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control" id="PISOS"
+                                    placeholder="Ingrese la cantidad de Pisos" required>
+                                <div class="invalid-tooltip">
+                                    ¡Debes ingresar la cantidad de Pisos!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 position-relative">
+                        <div class="row">
+                            <label for="DPTOS" class="col-sm-3 col-form-label text-start">Departamentos:</label>
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control" id="DPTOS"
+                                    placeholder="Ingrese la cantidad de UF" required>
+                                <div class="invalid-tooltip">
+                                    ¡Debes ingresar la cantidad de Dptos!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 position-relative mt-5">
+                        <div class="row">
+                            <label for="TIPOINFO" class="col-sm-3 col-form-label text-start">Tipo de informe: </label>
+                            <div class="col-sm-5">
+                                <select class="form-select" id="TIPOINFO" required>
+                                    <option selected disabled value="">Seleccione</option>
+                                    <option value="1">SOLICITUD DE PERMISO</option>
+                                    <option value="2">INCUMPLIMIENTO</option>
+                                    <option value="3">FACTIBILIDAD DE ARMADO</option>
+                                </select>
+                                <div class="invalid-tooltip">
+                                    ¡Debes ingresar el tipo de informe a solicitar!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 position-relative">
+                        <div class="row">
+                            <div class="input-group">
+                                <div class="col-3 text-start">
+                                    <label for="TELEFN1" class="col-form-label text-start">Tipo de Contacto:</label>
+                                </div>
+                                <div class="col-3">
+                                    <select class="form-select" id="TELEFN1" required>
+                                        <option selected disabled value="">Seleccione</option>
+                                        <option value="1">Administracion</option>
+                                        <option value="2">Encargado</option>
+                                        <option value="3">Firmante</option>
+                                    </select>
+                                    <div class="invalid-tooltip">
+                                        ¡Debes ingresar al menos un contacto!
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" class="form-control" id="TELEF1" placeholder="Telefono">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group">
+                                <div class="col-3 text-start">
+                                    <label for="TELEFN2" class="col-form-label text-start">Tipo de Contacto:</label>
+                                </div>
+                                <div class="col-3">
+                                    <select class="form-select" id="TELEFN2" required>
+                                        <option selected disabled value="">Seleccione</option>
+                                        <option value="1">Administracion</option>
+                                        <option value="2">Encargado</option>
+                                        <option value="3">Firmante</option>
+                                    </select>
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" class="form-control" id="TELEF2" placeholder="Telefono">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group">
+                                <div class="col-3 text-start">
+                                    <label for="TELEFN3" class="col-form-label text-start">Tipo de Contacto:</label>
+                                </div>
+                                <div class="col-3">
+                                    <select class="form-select" id="TELEFN3" required>
+                                        <option selected disabled value="">Seleccione</option>
+                                        <option value="1">Administracion</option>
+                                        <option value="2">Encargado</option>
+                                        <option value="3">Firmante</option>
+                                    </select>
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" class="form-control" id="TELEF3" placeholder="Telefono">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 position-relative">
+                        <div class="row">
+                            <label for="PERMISO" class="col-sm-3 col-form-label text-start">Tipo de Permiso: </label>
+                            <div class="col-sm-5">
+                                <select class="form-select" id="PERMISO" required>
+                                    <option selected disabled value="">Seleccione</option>
+                                    <option value="1">Permite armado por exterior y tiene cañería destinada para CATV
+                                        (montante).</option>
+                                    <option value="2">No permite armado por exterior, tiene cañería destinada para
+                                        CATV (montante).</option>
+                                    <option value="3">Permite armado por exterior, no tiene cañería destinada para
+                                        CATV (montante).</option>
+                                    <option value="4">No tiene permiso, ingreso como una VT de instalación.</option>
+                                </select>
+                                <div class="invalid-tooltip">
+                                    ¡Debes ingresar el Permiso previo o si se entro por VT!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 position-relative">
+                        <div class="row">
+                            <div class="input-group">
+                                <div class="col-3 text-start">
+                                    <label for="LOCAL" class="col-form-label text-start">Locales tomando del
+                                        Edif:</label>
+                                </div>
+                                <div class="col-3">
+                                    <select class="form-select" id="LOCAL" required>
+                                        <option selected disabled value="">Seleccione</option>
+                                        <option value="1">SI</option>
+                                        <option value="2">NO</option>
+                                    </select>
+                                    <div class="invalid-tooltip">
+                                        ¡Debes indicar si existen locales tomando del
+                                        Edif!
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" class="form-control" id="LOCALCANT" placeholder="Cantidad">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 position-relative">
+                        <div class="row">
+                            <label for="COMPETENCIA" class="col-sm-3 col-form-label text-start">Info de Competencia:
+                            </label>
+                            <div class="col-sm-6">
+                                <select class="form-select" id="COMPETENCIA" required>
+                                    <option selected disabled value="">Seleccione</option>
+                                    <option value="1">Las competencias se encuentran armada por Exterior y ofrecen
+                                        servicios de internet y cable.</option>
+                                    <option value="2">Las competencias se encuentran armada por Montante y ofrecen
+                                        servicios de internet y cable.</option>
+                                    <option value="3">Las competencias se encuentran armada por Exterior y Montante y
+                                        ofrecen servicios de internet y cable.</option>
+                                    <option value="4">El Edificio no posee otras empresas instaladas.</option>
+                                </select>
+                                <div class="invalid-tooltip">
+                                    ¡Debes ingresar la informacion de la competencia!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 position-relative">
+                        <div class="row">
+                            <label for="ARMADO" class="col-sm-3 col-form-label text-start">Propuesta de Armado:
+                            </label>
+                            <div class="col-sm-5">
+                                <select class="form-select" id="ARMADO" required>
+                                    <option selected disabled value="">Seleccione</option>
+                                    <option value="1">EXTERIOR</option>
+                                    <option value="2">MONTANTE</option>
+                                    <option value="3">EXTERIOR Y MONTANTE</option>
+                                </select>
+                                <div class="invalid-tooltip">
+                                    ¡Debes ingresar la Propuesta de Armado:!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div id="PROPUESTAARMADO" class="col-sm-12">
+                                <textarea class="form-control" rows="2" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 position-relative">
+                        <label for="OBS" class="col-sm-3 col-form-label text-start">Observaciones Adicionales:</label>
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div id="preview"></div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class="input-group">
+                                <label for="imaUpload" class="col-sm-1 col-form-label text-start">1.</label>
+                                <input type="file" class="col-sm-5 form-control" id="imaUpload">
+                            </div>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class="col-sm-12">
+                                <textarea id="OBS1" class="form-control" rows="2" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-12 pt-3">
                         <div class="row">
                             <div class="col-6 d-grid gap-2">
                                 <button id="GENERAR" type="submit" class="btn btn-success">GENERAR</button>
@@ -177,30 +346,6 @@
 
             </div>
 
-
-            <div class="col-md-6 pt-3 pb-5" style="background-color: #979EB8;">
-
-                <div class="row">
-                    <div class="col-12 position-relative">
-                        <div class="row">
-                            <label for="PARRAFO" class="col-sm-12 col-form-label fw-bold text-start">Cuerpo del
-                                Ticket:</label>
-                            <div class="col-sm-10 offset-sm-1">
-                                <textarea class="form-control" id="PARRAFO" rows="10"></textarea>
-                            </div>
-                            <div class="col-sm-10 pt-2 offset-sm-1 d-grid gap-2">
-                                <button id="COPIAR" type="button" class="btn btn-success">COPIAR</button>
-                            </div>
-                            <div class="col-sm-10 pt-2 offset-sm-1 d-grid gap-2">
-                                <button id="ENVIAR" type="button" class="btn btn-success">ENVIAR</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
         </div>
 
         <div class="row" style="background-color: #335EFF;">
@@ -208,12 +353,13 @@
             <div class="col align-self-center">
                 <div class="row mt-3">
                     <div class="col-sm-12 ">
-                        <h6 style="color:white">Desarrollado por Gestion de Procesos y Servicios S.A. al servicio de
-                            TELECENTRO</h6>
+                        <h5 style="color:white">Desarrollado por Gestion de Procesos y Servicios S.A. al servicio de
+                            TELECENTRO</h5>
                     </div>
                     <div class="row mt-">
                         <div class="col-sm-6 offset-sm-3">
                             <h6 style="color:white">By Ing. Ignacio Velazquez</h6>
+                            <h6 style="color:white">jvelazquez@gdp.com.ar</h6>
                         </div>
                         <div class="col-sm-1 offset-sm-2">
                             <h5 style="color:white">V1.0</h5>
@@ -225,9 +371,9 @@
 
 
 
-
-        <script></script>
-        <?!= include('JavaScript'); ?>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="./JavaScript.js"></script>
+        <!---------<?!= include('JavaScript'); ?>---->
 
 </body>
 
