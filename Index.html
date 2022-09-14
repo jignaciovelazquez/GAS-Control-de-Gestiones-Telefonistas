@@ -46,8 +46,7 @@
             <!-- --------------------------------------BODY------------------------------------------------------------>
             <div class="col-md-12 pt-3 pb-5" style="background-color: #C2CAE5;">
 
-                <form id="FORMULARIO" class="row g-2 needs-validation" onsubmit="return false" action="PRUEBA()"
-                    novalidate>
+                <form id="FORMULARIO" class="row g-2 needs-validation" onsubmit="return false" novalidate>
 
                     <div class="col-12 position-relative">
                         <div class="row">
@@ -57,7 +56,7 @@
                                     <input type="text" class="form-control" id="ID" placeholder="Ingrese el ID"
                                         required>
                                     <div class="invalid-tooltip">
-                                        ¡Debes ingresar el Despacho!
+                                        ¡Debes ingresar el ID de la gestion!
                                     </div>
                                 </div>
                                 <button class="btn btn-secondary" type="button" id="BUSCARID">BUSCAR ID</button>
@@ -136,9 +135,10 @@
                             <div class="col-sm-5">
                                 <select class="form-select" id="TIPOINFO" required>
                                     <option selected disabled value="">Seleccione</option>
-                                    <option value="1">SOLICITUD DE PERMISO</option>
-                                    <option value="2">INCUMPLIMIENTO</option>
-                                    <option value="3">FACTIBILIDAD DE ARMADO</option>
+                                    <option value="1">PROPUESTA PARA ARMADO (permiso)</option>
+                                    <option value="2">PREFACTIBILIDAD PARA ARMADO</option>
+                                    <option value="3">INCUMPLIMIENTO DE EDIFICIO</option>
+                                    <option value="4">PREFACTIBILIDAD PARA RECONVERSION DE EDIFICIO</option>
                                 </select>
                                 <div class="invalid-tooltip">
                                     ¡Debes ingresar el tipo de informe a solicitar!
@@ -148,60 +148,94 @@
                     </div>
 
                     <div class="col-12 position-relative">
+
+
+
+
                         <div class="row">
                             <div class="input-group">
                                 <div class="col-3 text-start">
                                     <label for="TELEFN1" class="col-form-label text-start">Tipo de Contacto:</label>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-2">
                                     <select class="form-select" id="TELEFN1" required>
                                         <option selected disabled value="">Seleccione</option>
-                                        <option value="1">Administracion</option>
-                                        <option value="2">Encargado</option>
-                                        <option value="3">Firmante</option>
+                                        <option value="Administracion">Administracion</option>
+                                        <option value="Encargado">Encargado</option>
+                                        <option value="Firmante">Firmante</option>
                                     </select>
                                     <div class="invalid-tooltip">
-                                        ¡Debes ingresar al menos un contacto!
+                                        ¡Debes ingresar al menos un tipo de contacto!
                                     </div>
                                 </div>
                                 <div class="col-3">
-                                    <input type="text" class="form-control" id="TELEF1" placeholder="Telefono">
+                                    <input type="text" class="form-control" id="TELEF11" placeholder="Nombre" required>
+                                    <div class="invalid-tooltip">
+                                        ¡Debes ingresar al menos un nombre del contacto!
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <input type="text" class="form-control" id="TELEF12" placeholder="Telefono"
+                                        required>
+                                    <div class="invalid-tooltip">
+                                        ¡Debes ingresar al menos un numero de contacto!
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <input type="text" class="form-control" id="TELEF13" placeholder="Mail" required>
+                                    <div class="invalid-tooltip">
+                                        ¡Debes ingresar al menos un mail de contacto ( - = No Indica)!
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+
+                        <div class="row mt-1">
                             <div class="input-group">
                                 <div class="col-3 text-start">
-                                    <label for="TELEFN2" class="col-form-label text-start">Tipo de Contacto:</label>
+                                    <label for="TELEFN1" class="col-form-label text-start">Tipo de Contacto:</label>
                                 </div>
-                                <div class="col-3">
-                                    <select class="form-select" id="TELEFN2" required>
+                                <div class="col-2">
+                                    <select class="form-select" id="TELEFN2">
                                         <option selected disabled value="">Seleccione</option>
-                                        <option value="1">Administracion</option>
-                                        <option value="2">Encargado</option>
-                                        <option value="3">Firmante</option>
+                                        <option value="Administracion">Administracion</option>
+                                        <option value="Encargado">Encargado</option>
+                                        <option value="Firmante">Firmante</option>
                                     </select>
                                 </div>
                                 <div class="col-3">
-                                    <input type="text" class="form-control" id="TELEF2" placeholder="Telefono">
+                                    <input type="text" class="form-control" id="TELEF21" placeholder="Nombre">
+                                </div>
+                                <div class="col-2">
+                                    <input type="text" class="form-control" id="TELEF22" placeholder="Telefono">
+                                </div>
+                                <div class="col-2">
+                                    <input type="text" class="form-control" id="TELEF23" placeholder="Mail">
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+
+                        <div class="row mt-1">
                             <div class="input-group">
                                 <div class="col-3 text-start">
-                                    <label for="TELEFN3" class="col-form-label text-start">Tipo de Contacto:</label>
+                                    <label for="TELEFN1" class="col-form-label text-start">Tipo de Contacto:</label>
                                 </div>
-                                <div class="col-3">
-                                    <select class="form-select" id="TELEFN3" required>
+                                <div class="col-2">
+                                    <select class="form-select" id="TELEFN3">
                                         <option selected disabled value="">Seleccione</option>
-                                        <option value="1">Administracion</option>
-                                        <option value="2">Encargado</option>
-                                        <option value="3">Firmante</option>
+                                        <option value="Administracion">Administracion</option>
+                                        <option value="Encargado">Encargado</option>
+                                        <option value="Firmante">Firmante</option>
                                     </select>
                                 </div>
                                 <div class="col-3">
-                                    <input type="text" class="form-control" id="TELEF3" placeholder="Telefono">
+                                    <input type="text" class="form-control" id="TELEF31" placeholder="Nombre">
+                                </div>
+                                <div class="col-2">
+                                    <input type="text" class="form-control" id="TELEF32" placeholder="Telefono">
+                                </div>
+                                <div class="col-2">
+                                    <input type="text" class="form-control" id="TELEF33" placeholder="Mail">
                                 </div>
                             </div>
                         </div>
@@ -239,8 +273,8 @@
                                 <div class="col-3">
                                     <select class="form-select" id="LOCAL" required>
                                         <option selected disabled value="">Seleccione</option>
-                                        <option value="1">SI</option>
-                                        <option value="2">NO</option>
+                                        <option value="NO">NO</option>
+                                        <option value="SI">SI</option>
                                     </select>
                                     <div class="invalid-tooltip">
                                         ¡Debes indicar si existen locales tomando del
@@ -280,32 +314,61 @@
 
                     <div class="col-12 position-relative">
                         <div class="row">
-                            <label for="ARMADO" class="col-sm-3 col-form-label text-start">Propuesta de Armado:
-                            </label>
-                            <div class="col-sm-5">
-                                <select class="form-select" id="ARMADO" required>
-                                    <option selected disabled value="">Seleccione</option>
-                                    <option value="1">EXTERIOR</option>
-                                    <option value="2">MONTANTE</option>
-                                    <option value="3">EXTERIOR Y MONTANTE</option>
-                                </select>
-                                <div class="invalid-tooltip">
-                                    ¡Debes ingresar la Propuesta de Armado:!
+
+                            <label for="ARMADO" class="col-sm-3 col-form-label text-start">Propuesta de
+                                Armado:</label>
+
+                        </div>
+
+                        <div class="row" id="switchPropuestas">
+
+                            <div class="col-sm-12">
+                                <div class="form-check form-check-inline form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="inlineCheckbox1"
+                                        value="1" required>
+                                    <label class="form-check-label" for="inlineCheckbox1">HFC - EXTERIOR</label>
+                                </div>
+                                <div class="form-check form-check-inline form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="inlineCheckbox2"
+                                        value="2" required>
+                                    <label class="form-check-label" for="inlineCheckbox2">HFC - MONTANTE</label>
+                                </div>
+                                <div class="form-check form-check-inline form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="inlineCheckbox3"
+                                        value="3" required>
+                                    <label class="form-check-label" for="inlineCheckbox3">HFC - EXTERIOR Y
+                                        MONTANTE</label>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row mt-2">
-                            <div id="PROPUESTAARMADO" class="col-sm-12">
-                                <textarea class="form-control" rows="2" required></textarea>
+
+                            <div class="col-sm-12 mt-2 ">
+                                <div class="form-check form-check-inline form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="inlineCheckbox4"
+                                        value="4" required>
+                                    <label class="form-check-label" for="inlineCheckbox4">FTTH - EXTERIOR</label>
+                                </div>
+                                <div class="form-check form-check-inline form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="inlineCheckbox5"
+                                        value="5" required>
+                                    <label class="form-check-label" for="inlineCheckbox5">FTTH - MONTANTE</label>
+                                </div>
+                                <div class="form-check form-check-inline form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="inlineCheckbox6"
+                                        value="6" required>
+                                    <label class="form-check-label" for="inlineCheckbox6">FTTH - EXTERIOR Y
+                                        MONTANTE</label>
+                                </div>
                             </div>
                         </div>
                     </div>
 
 
                     <div class="col-12 position-relative">
-                        <label for="OBS" class="col-sm-3 col-form-label text-start">Observaciones Adicionales:</label>
                         <div class="row">
-
+                            <label for="OBS" class="col-sm-3 col-form-label text-start">Observaciones
+                                Adicionales:</label>
+                        </div>
+                        <div class="row mt-2">
                             <div class="col-sm-6">
                                 <div id="preview"></div>
                             </div>
@@ -320,7 +383,7 @@
 
                         <div class="row mt-2">
                             <div class="col-sm-12">
-                                <textarea id="OBS1" class="form-control" rows="2" required></textarea>
+                                <textarea id="OBS1" class="form-control" rows="3"></textarea>
                             </div>
                         </div>
                     </div>
@@ -372,8 +435,10 @@
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="./JavaScript.js"></script>
+        <script src="./JavaScript.html.js"></script>
         <!---------<?!= include('JavaScript'); ?>---->
+        <script src="./thumbnails.html.js"></script>
+        <!---------<?!= include('thumbnails'); ?>---->
 
 </body>
 
